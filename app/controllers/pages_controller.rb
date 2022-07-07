@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def my_posts
+    @user = current_user
+    @my_posts = @user.posts
+  end
 end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get 'my-posts', to: 'pages#my_posts', as: :my_posts
   resources :posts do
     resources :comments, only: [:create]
   end
