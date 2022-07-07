@@ -1,0 +1,26 @@
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #F5B02C;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #ff8000;
+  color: white;
+}
+
+.cta{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btn-flat-add-article-navbar{
+  display: flex;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: #F5B02C;
+  align-items: center;
+}

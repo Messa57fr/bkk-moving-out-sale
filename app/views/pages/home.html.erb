@@ -1,2 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1495020689067-958852a7765e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80)">
+  <div class="container">
+    <h1>Welcome on <strong>News Now!</strong></h1>
+    <p>All your news, all in one page</p>
+    <%= link_to "See all articles", posts_path, class:"btn-flat"%>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="text-center mt-4 mb-4 p-4" >How it works?</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4661/4661257.png" alt="">
+      <h4>Read</h4>
+      <p>All your news in one place, fast-pace!</p>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4661/4661257.png" alt="">
+      <h4>Comment</h4>
+      <p>Like or don't like it? Just say it!</p>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4661/4661257.png" alt="">
+      <h4>Add</h4>
+      <p>Share your own news but not old news!</p>
+    </div>
+  </div>
+  <div class="cta p-3">
+    <%= link_to "See all articles", posts_path, class:"btn-flat"%>
+  </div>
+</div>
+
+  <!-- code a footer -->
+  <div class="footer mt-4 text-align-center">
+    <div class="links">
+      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-fw fa-github"></i></a>
+      <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+      <p>This website was coded with <i class="fas fa-heart"></i> by Sam ^^</p>
+    </div>
+  </div>

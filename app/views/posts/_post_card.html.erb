@@ -1,0 +1,9 @@
+<div class="card-product">
+  <%= link_to post_path(post) do %>
+    <img src="https://picsum.photos/200">
+    <div class="card-product-infos">
+      <h2><%=post.title%></h2>
+      <p><%=post.content%></p>
+    <% end %>
+    </div>
+</div>
