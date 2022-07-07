@@ -7,7 +7,11 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @post.comments
+    if Comment.where(post: @post).exists?
+      @comments = @post.comments
+    else
+      @comments = nil
+    end
   end
 
   def new
@@ -16,7 +20,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post = current_user
+    @post.user = current_user
     if @post.save
       redirect_to post_path(@post), notice: 'Post was successfully created'
     else
@@ -24,14 +28,17 @@ class PostsController < ApplicationController
     end
   end
 
-
   def update
+    @post.update(post_params)
+    redirect_to post_path(@post), notice: 'Post was successfully updated'
   end
 
   def edit
   end
 
   def destroy
+    @post.destroy
+    redirect_to posts_path, alert: 'Post was successfully deleted'
   end
 
   private
@@ -41,6 +48,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :url, :user_id)
+    params.require(:post).permit(:title, :content, :url, :user)
   end
 end

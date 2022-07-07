@@ -1,0 +1,35 @@
+<div class = container>
+  <h1>Post</h1>
+  <div class="card-trip">
+    <img src="https://picsum.photos/800" />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%=@post.title%></h2>
+        <p><%=@post.content%></p>
+        <p><%=@post.url%></p>
+      </div>
+      <div class="card-trip-buttons">
+        <%= link_to "Edit", edit_post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center"%>
+        <%= link_to "Delete", post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center", method: :"DELETE", data: { confirm: "Are you sure ?"}%>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <div class="form-wrapper mt-3 mb-4 w-100">
+        <%= simple_form_for [@post, @comment] do |f| %>
+          <%= f.input :content, as: :text, required: true, placeholder: 'Enter your comments here', label: 'Enter your comments here' %>
+          <%= f.button :submit, "Comment", class: "w-100 btn-flat text-white mx-auto d-flex justify-content-center" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="card-trip">
+      <% if @comments.nil? %>
+        <p> No comments yet </p>
+      <% else %>
+        <% @comments.each do |comment| %>
+          <p><%= comment.content %></p>
+        <% end %>
+      <% end %>
+    </div>
+</div>
