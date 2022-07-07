@@ -1,9 +1,9 @@
 <div class="card-product">
   <%= link_to post_path(post) do %>
-    <img src="https://picsum.photos/200">
+    <%= cl_image_tag post.photo.key, height: 800, width: 800, crop: :fill %>
     <div class="card-product-infos">
       <h2><%=post.title%></h2>
-      <p><%=post.content%></p>
+      <p><%=truncate(post.content, length: 150)%></p>
     <% end %>
     </div>
 </div>
