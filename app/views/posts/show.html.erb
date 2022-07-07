@@ -11,8 +11,10 @@
     </div>
 
       <div class="card-trip-buttons">
-        <%= link_to "Edit", edit_post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center rounded"%>
-        <%= link_to "Delete", post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center rounded", method: :"DELETE", data: { confirm: "Are you sure ?"}%>
+        <% if (@post.user == current_user)%>
+          <%= link_to "Edit", edit_post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center rounded"%>
+          <%= link_to "Delete", post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center rounded", method: :"DELETE", data: { confirm: "Are you sure ?"}%>
+        <% end %>
       </div>
 
     <div class="form-container">
