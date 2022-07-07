@@ -1,18 +1,19 @@
 <div class = container>
-  <h1>Post</h1>
-  <div class="card-trip">
-    <img src="https://picsum.photos/800" />
+  <%= link_to "<< Back", posts_path, class:"btn btn-dark rounded"%>
+  <div class="card-trip mt-3">
+    <%= cl_image_tag @post.photo.key, height: 400, width: 900, crop: :fill %>
     <div class="card-trip-infos">
       <div>
-        <h2><%=@post.title%></h2>
-        <p><%=@post.content%></p>
+        <h1><%=@post.title%></h1>
         <p><%=@post.url%></p>
-      </div>
-      <div class="card-trip-buttons">
-        <%= link_to "Edit", edit_post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center"%>
-        <%= link_to "Delete", post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center", method: :"DELETE", data: { confirm: "Are you sure ?"}%>
+        <div class= "content"><p><%=@post.content%></p></div>
       </div>
     </div>
+
+      <div class="card-trip-buttons">
+        <%= link_to "Edit", edit_post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center rounded"%>
+        <%= link_to "Delete", post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center rounded", method: :"DELETE", data: { confirm: "Are you sure ?"}%>
+      </div>
 
     <div class="form-container">
       <div class="form-wrapper mt-3 mb-4 w-100">
@@ -28,7 +29,7 @@
         <p> No comments yet </p>
       <% else %>
         <% @comments.each do |comment| %>
-          <p><%= comment.content %></p>
+          <%= render 'comments_card', comment: comment %>
         <% end %>
       <% end %>
     </div>
