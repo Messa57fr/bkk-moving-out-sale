@@ -1,5 +1,5 @@
 <div class = container>
-  <h1>You have <%= @my_posts.count %> Posts</h1>
+  <h1>You have <%= pluralize @my_posts.count, "post" %> </h1>
   <%= link_to "<< Back", posts_path, class:"btn btn-dark rounded"%>
   <div class = "cards mt-3">
     <% @my_posts.each do |post|%>
