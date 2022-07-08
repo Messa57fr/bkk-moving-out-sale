@@ -130,7 +130,7 @@ user = User.order(Arel.sql('RANDOM()')).first
 file = URI.open('https://res.cloudinary.com/messa57fr/image/upload/v1657219580/peter-lawrence-rXZa4ufjoGw-unsplash_fdgdju.jpg')
 article10 = Post.new(
   title: Faker::Games::SuperMario.location,
-  content: Faker::Lorem.paragraphs(number: 15),
+  content: Faker::Lorem.paragraphs(number: 30),
   url: Faker::Internet.url,
   user: user)
 article10.photo.attach(io: file, filename: 'article10.jpg', content_type: 'image/jpg')

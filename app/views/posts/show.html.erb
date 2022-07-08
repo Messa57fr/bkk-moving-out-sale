@@ -1,38 +1,39 @@
-<div class = container>
+<div class = "container">
   <%= link_to "<< Back", posts_path, class:"btn btn-dark rounded"%>
   <div class="card-trip mt-3">
     <%= cl_image_tag @post.photo.key, height: 400, width: 900, crop: :fill %>
     <div class="card-trip-infos">
       <div>
         <h1><%=@post.title%></h1>
-        <p><%=@post.url%></p>
-        <div class= "content"><p><%=@post.content%></p></div>
+        <p>Reference: <%= link_to @post.url%></p>
+        <div class= "content"><p><%= @post.content%></p></div>
       </div>
     </div>
 
-      <div class="card-trip-buttons">
-        <% if (@post.user == current_user)%>
-          <%= link_to "Edit", edit_post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center rounded"%>
-          <%= link_to "Delete", post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center rounded", method: :"DELETE", data: { confirm: "Are you sure ?"}%>
-        <% end %>
-      </div>
-
-    <div class="form-container">
-      <div class="form-wrapper mt-3 mb-4 w-100">
-        <%= simple_form_for [@post, @comment] do |f| %>
-          <%= f.input :content, as: :text, required: true, placeholder: 'Enter your comments here', label: 'Enter your comments here' %>
-          <%= f.button :submit, "Comment", class: "w-100 btn-flat text-white mx-auto d-flex justify-content-center" %>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="card-trip">
-      <% if @comments.nil? %>
-        <p> No comments yet </p>
-      <% else %>
-        <% @comments.each do |comment| %>
-          <%= render 'comments_card', comment: comment %>
-        <% end %>
+    <div class="card-trip-buttons">
+      <% if (@post.user == current_user)%>
+        <%= link_to "Edit", edit_post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center rounded"%>
+        <%= link_to "Delete", post_path(@post), class:"btn btn-dark btn-delete text-white justify-content-center rounded", method: :DELETE, data: { confirm: "Are you sure ?"}%>
       <% end %>
     </div>
+  </div>
+
+  <div class="form-container">
+    <div class="form-wrapper mt-3 mb-3 w-100">
+      <%= simple_form_for [@post, @comment] do |f| %>
+        <%= f.input :content, as: :text, required: true, placeholder: 'Enter your comments here', label: 'Enter your comments here' %>
+        <%= f.button :submit, "Comment", class: "w-100 btn-flat text-white mx-auto d-flex justify-content-center" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="card-trip">
+    <% if @comments.nil? %>
+      <h2 class= "p-3"> No comments yet &#128546; </h2>
+    <% else %>
+      <% @comments.each do |comment| %>
+        <%= render 'comments_card', comment: comment %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
