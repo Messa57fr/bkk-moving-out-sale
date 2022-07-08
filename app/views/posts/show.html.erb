@@ -1,4 +1,4 @@
-<div class = container>
+<div class = "container">
   <%= link_to "<< Back", posts_path, class:"btn btn-dark rounded"%>
   <div class="card-trip mt-3">
     <%= cl_image_tag @post.photo.key, height: 400, width: 900, crop: :fill %>
@@ -29,7 +29,7 @@
 
   <div class="card-trip">
     <% if @comments.nil? %>
-      <p> No comments yet </p>
+      <h2 class= "p-3"> No comments yet &#128546; </h2>
     <% else %>
       <% @comments.each do |comment| %>
         <%= render 'comments_card', comment: comment %>
