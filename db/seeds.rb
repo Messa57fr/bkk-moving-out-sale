@@ -136,9 +136,8 @@ article10 = Post.new(
 article10.photo.attach(io: file, filename: 'article10.jpg', content_type: 'image/jpg')
 article10.save
 
-
 puts "Creating comments..."
-5.times do
+15.times do
   user = User.order(Arel.sql('RANDOM()')).first
   post = Post.order(Arel.sql('RANDOM()')).first
   Comment.create!(
