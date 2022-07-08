@@ -1,6 +1,7 @@
 <div class = container>
-  <h1>You have <%= Post.count %> Posts</h1>
-  <div class = "cards">
+  <h1>You have <%= @my_posts.count %> Posts</h1>
+  <%= link_to "<< Back", posts_path, class:"btn btn-dark rounded"%>
+  <div class = "cards mt-3">
     <% @my_posts.each do |post|%>
       <%= render 'post_card', post: post %>
     <% end %>
