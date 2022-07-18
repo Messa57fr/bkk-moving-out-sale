@@ -1,7 +1,9 @@
 <div class = "container">
   <%= link_to "<< Back", posts_path, class:"btn btn-dark rounded"%>
   <div class="card-trip mt-3">
-    <%= cl_image_tag @post.photo.key, height: 400, width: 900, crop: :fill %>
+    <% @post.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 400, width: 900, crop: :fill %>
+    <% end %>
     <div class="card-trip-infos">
       <div>
         <h1><%=@post.title%></h1>
