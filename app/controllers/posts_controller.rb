@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :destroy, :edit, :update]
-  before_action :authenticate_user!
+  skip_before_action :authenticate_user!
+  require 'faker'
 
   def index
     @posts = Post.all
@@ -49,6 +50,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :url, :user, :photo)
+    params.require(:post).permit(:title, :content, :url, :user, :brand, :category, :price, :photo)
   end
 end

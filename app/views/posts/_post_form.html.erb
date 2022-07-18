@@ -1,9 +1,12 @@
 <div class = container>
   <%= simple_form_for @post do |f| %>
+    <%= f.input :category %>
     <%= f.input :title %>
     <%= f.input :content %>
+    <%= f.input :brand %>
+    <%= f.input :price %>
     <%= f.input :url, input_html: { required: true } %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true }, required: true %>
+    <%= f.input :photo, as: :file, input_html: { required: true } %>
     <%= f.submit "Submit", class: "btn btn-dark btn-delete text-white justify-content-center rounded" %>
   <% end %>
 </div>
