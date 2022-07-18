@@ -3,7 +3,7 @@
   <%= link_to "<< Back", posts_path, class:"btn btn-dark rounded"%>
   <div class = "cards mt-3">
     <% @my_posts.each do |post|%>
-      <%= render 'post_card', post: post %>
+      <%= render './posts/post_card', post: post %>
     <% end %>
   </div>
 </div>
