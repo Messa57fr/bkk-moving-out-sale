@@ -21,7 +21,7 @@
   <div class="form-container">
     <div class="form-wrapper mt-3 mb-3 w-100">
       <%= simple_form_for [@post, @comment] do |f| %>
-        <%= f.input :content, as: :string, required: true, placeholder: Faker::Name.name, label: 'Enter your name here' %>
+        <%= f.input :name, as: :string, required: true, placeholder: Faker::Name.name, label: 'Enter your name here' %>
         <%= f.input :content, as: :text, required: true, placeholder: Faker::Quote.famous_last_words, label: 'Enter your comments here' %>
         <%= f.button :submit, "Comment", class: "w-100 btn-flat text-white mx-auto d-flex justify-content-center" %>
       <% end %>
