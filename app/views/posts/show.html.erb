@@ -9,8 +9,8 @@
     <div class="card-trip-infos">
       <div>
         <h1><%=@post.title%></h1>
-        <div class = "content"><h5><%= @post.content%></h5></div>
-        <%= link_to "More infos", @post.url, target: :_blank, class:"btn btn-dark btn-delete text-white justify-content-center rounded"%>
+        <div class = "content"><%= simple_format(@post.content)%></div>
+        <%= link_to "More infos", @post.url, target: :_blank, class:"mt-2 btn btn-dark btn-delete text-white justify-content-center rounded"%>
       </div>
     </div>
 
