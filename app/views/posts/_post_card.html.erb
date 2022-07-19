@@ -3,8 +3,8 @@
   <div class="card-product">
     <%= cl_image_tag post.photo.key, height: 800, width: 800, crop: :fill %>
     <div class="card-product-infos">
-      <h2><%=post.title%></h2>
-      <p><%=truncate(post.content, length: 150)%></p>
+      <h2><%=truncate(post.title, length: 100)%></h2>
+      <p><%=truncate(post.content, length: 110)%></p>
 
     </div>
   </div>
