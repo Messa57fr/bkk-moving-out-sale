@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :destroy, :edit, :update]
   skip_before_action :authenticate_user!
+  $CATEGORIES = ["Real Estate", "Video Games", "Electronic", "Motor", "Home Appliance", "Home Furniture", "Outdoor"]
+
   require 'faker'
 
   def index
