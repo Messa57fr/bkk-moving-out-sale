@@ -1,0 +1,6 @@
+# config/meta.yml
+
+meta_product_name: "Moving Out Sale"
+meta_title: "Moving Out Sale - Pakki & Sam"
+meta_description: "You can find in this link all the items that we are selling. Contact us via FB for more informations"
+meta_image: "cover.png" # should exist in `app/assets/images/`
