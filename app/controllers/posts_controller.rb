@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   require 'faker'
 
   def index
-    @posts = Post.all
+    @posts = Post.order(price: :desc)
   end
 
   def show
