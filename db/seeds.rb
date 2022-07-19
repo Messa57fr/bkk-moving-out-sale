@@ -26,16 +26,16 @@ n = 1
   n += 1
 end
 
-puts "Creating article 1..."
-user = User.order(Arel.sql('RANDOM()')).first
-file = URI.open('https://res.cloudinary.com/messa57fr/image/upload/v1657219591/ifrzel.jpg')
-article1 = Post.new(
-  title: Faker::Games::SuperMario.location,
-  content: Faker::Lorem.paragraphs(number: 15),
-  url: Faker::Internet.url,
-  user: user)
-article1.photo.attach(io: file, filename: 'aricle1.jpg', content_type: 'image/jpg')
-article1.save
+# puts "Creating article 1..."
+# user = User.order(Arel.sql('RANDOM()')).first
+# file = URI.open('https://res.cloudinary.com/messa57fr/image/upload/v1657219591/ifrzel.jpg')
+# article1 = Post.new(
+#   title: Faker::Games::SuperMario.location,
+#   content: Faker::Lorem.paragraphs(number: 15),
+#   url: Faker::Internet.url,
+#   user: user)
+# article1.photo.attach(io: file, filename: 'aricle1.jpg', content_type: 'image/jpg')
+# article1.save
 
 # puts "Creating article 2..."
 # user = User.order(Arel.sql('RANDOM()')).first
