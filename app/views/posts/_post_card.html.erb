@@ -4,7 +4,7 @@
     <%= cl_image_tag post.photo.key, height: 800, width: 800, crop: :fill %>
     <div class="card-product-infos">
       <h2><%=truncate(post.title, length: 100)%></h2>
-      <p><%=truncate(post.content, length: 110)%></p>
+      <p><%=truncate(post.content, length: 100)%></p>
 
     </div>
   </div>
